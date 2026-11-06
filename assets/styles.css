@@ -1747,3 +1747,24 @@ footer{view-transition-name:mt-foot}
    górę panelu (nagłówek) zasłaniał pasek. Hero rośnie z treścią
    i zawsze trzyma odstęp pod paskiem. */
 .hero-dom{height:auto;min-height:clamp(640px,86svh,900px);padding-top:calc(72px + clamp(1.25rem,4vh,2.5rem))}
+
+/* === hero: hasło przeniesione (poprawka 06.11, druga runda) ===
+   Hasło nie stoi już w wysokim panelu tuż pod paskiem. Komputer: niski,
+   szeroki panel na DOLE zdjęcia (hasło po lewej, przyciski po prawej).
+   Telefon: zdjęcie u góry, panel z hasłem POD zdjęciem, poza paskiem. */
+.hd-main,.hd-side{min-width:0}
+@media(min-width:900px){
+  .hero-dom{height:clamp(620px,88svh,920px);min-height:0;padding-top:0;align-items:flex-end}
+  .hero-dom .wrap{width:min(92%,1180px)}
+  .hd-panel{max-width:none;margin:0 0 clamp(1.75rem,5vh,3.25rem);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);column-gap:clamp(2rem,4vw,3.5rem);align-items:end}
+  .hd-claim{margin-bottom:0}
+  .hd-side{border-left:1px solid var(--line);padding-left:clamp(2rem,4vw,3.5rem)}
+  .hd-side .hd-tags{border-top:0;padding-top:0;margin-bottom:var(--space-4)}
+}
+@media(max-width:899px){
+  .hero-dom{display:block;height:auto;min-height:0;padding-top:72px;overflow:visible;background:var(--paper)}
+  .hero-dom .hd-bg{position:relative;inset:auto;display:block;height:clamp(240px,44svh,420px)}
+  .hero-dom .wrap{width:100%}
+  .hd-panel{max-width:none;width:100%;margin:0;border-left:0;border-right:0;box-shadow:none}
+  .hd-claim{overflow-wrap:break-word}
+}
