@@ -1741,3 +1741,9 @@ footer{view-transition-name:mt-foot}
 
 /* === szary tekst dociągnięty do czytelności (WCAG 4.5 na wszystkich tłach) === */
 :root{--muted:#63676F;}
+
+/* === hero: panel nigdy pod stałym paskiem (poprawka 06.11) ===
+   Stała wysokość hero + panel przyklejony do dołu = na niższych ekranach
+   górę panelu (nagłówek) zasłaniał pasek. Hero rośnie z treścią
+   i zawsze trzyma odstęp pod paskiem. */
+.hero-dom{height:auto;min-height:clamp(640px,86svh,900px);padding-top:calc(72px + clamp(1.25rem,4vh,2.5rem))}
